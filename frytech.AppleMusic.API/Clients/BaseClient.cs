@@ -45,6 +45,7 @@ public abstract class BaseClient
         {
             Converters =
             {
+                new DateTimeConverter(),
                 new TimeSpanMillisecondsConverter(),
                 new JsonStringEnumConverter(),
             },
