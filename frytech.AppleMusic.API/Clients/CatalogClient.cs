@@ -484,7 +484,7 @@ public class CatalogClient : BaseClient, ICatalogClient
 
         var queryString = new NameValueCollection
         {
-            { "term", term.Replace(' ', '+') }
+            { "term", term }
         };
 
         if (types != null && types.Any())
@@ -502,7 +502,7 @@ public class CatalogClient : BaseClient, ICatalogClient
 
         var queryString = new NameValueCollection
         {
-            { "term", term.Replace(' ', '+') },
+            { "term", term },
             { "groups", "top" },
             { "with", "serverBubbles" },
         };
@@ -526,7 +526,7 @@ public class CatalogClient : BaseClient, ICatalogClient
         var queryString = new NameValueCollection();
 
         if (!string.IsNullOrWhiteSpace(term))
-            queryString.Add("term", term.Replace(' ', '+'));
+            queryString.Add("term", term);
 
         if (types != null && types.Any())
             queryString.Add("types", string.Join(",", types.Select(x => x.GetValue())));

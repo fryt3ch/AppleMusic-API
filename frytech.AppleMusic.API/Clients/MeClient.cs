@@ -562,7 +562,7 @@ public class MeClient : BaseClient, IMeClient
         var queryString = new NameValueCollection();
 
         if (!string.IsNullOrWhiteSpace(term))
-            queryString.Add("term", term.Replace(' ', '+'));
+            queryString.Add("term", term);
 
         if (types != null && types.Any())
             queryString.Add("types", string.Join(",", types.Select(x => x.GetValue())));
